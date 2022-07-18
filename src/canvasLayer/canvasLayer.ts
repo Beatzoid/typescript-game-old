@@ -4,7 +4,9 @@ import { Canvas, Vector2D } from "@/utils";
 export class CanvasLayer {
     private static _background: Canvas;
 
-    private constructor() {}
+    private constructor() {
+        /*... */
+    }
 
     public static get Background(): Canvas {
         if (!this._background) {

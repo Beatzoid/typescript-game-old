@@ -4,7 +4,7 @@
 
 import { Game } from "@/game";
 import { Grid } from "@/grid";
-import { Entity, IComponent } from "@/utils";
+import { IComponent } from "@/utils";
 
 class C1 implements IComponent {
     public Entity: Game;

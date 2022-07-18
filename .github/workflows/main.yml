@@ -11,14 +11,13 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [16.x, 17.x, 18.x]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
 
-    name: Node ${{ matrix.node-version }} on ${{ matrix.os }}
+    name: Node ${{ matrix.node-version }} on ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
@@ -27,11 +26,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install Canvas Dependencies
+        run: sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+
       - name: Install Dependencies
-        run: yarn install
+        run: npm_config_build_from_source=true yarn install
 
       - name: Build App
         run: yarn build
 
-      - name: Run tests
+      - name: Run Tests
         run: yarn test

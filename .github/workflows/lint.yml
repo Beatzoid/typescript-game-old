@@ -18,8 +18,11 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install Canvas Dependencies
+        run: sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+
       - name: Install Dependencies
-        run: yarn install
+        run: npm_config_build_from_source=true yarn install
 
       - name: Lint
         run: yarn lint
