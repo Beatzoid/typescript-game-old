@@ -7,6 +7,7 @@ module.exports = {
     },
     parserOptions: {
         parser: "@typescript-eslint/parser",
+        project: "./tsconfig.json",
     },
     extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
     // add your custom rules here
@@ -44,7 +45,12 @@ module.exports = {
             },
             {
                 selector: "variable",
-                format: ["camelCase", "UPPER_CASE"],
+                format: [
+                    "camelCase",
+                    "strictCamelCase",
+                    "UPPER_CASE",
+                    "StrictPascalCase",
+                ],
             },
             {
                 selector: "memberLike",
