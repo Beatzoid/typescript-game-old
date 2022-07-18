@@ -36,7 +36,7 @@ module.exports = {
     devtool: "source-map",
     devServer: {
         hot: true,
-        historyApiFallback: true,
+        historyApiFallback: { disableDotRule: true },
     },
     resolve: {
         extensions: [".ts", ".js"],

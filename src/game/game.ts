@@ -1,14 +1,17 @@
+import { Grid } from "@/grid";
+import { Settings } from "@/settings";
 import { Entity } from "@/utils";
 
 export class Game extends Entity {
-    public entities: Entity[] = [];
-
+    private _entities: Entity[] = [];
     private _lastTimestamp = 0;
 
     public Awake(): void {
         super.Awake();
 
-        for (const entity of this.entities) {
+        this._entities.push(new Grid());
+
+        for (const entity of this._entities) {
             entity.Awake();
         }
 
@@ -27,11 +30,15 @@ export class Game extends Entity {
 
         super.Update(deltaTime);
 
-        for (const entity of this.entities) {
+        for (const entity of this._entities) {
             entity.Update(deltaTime);
         }
 
         this._lastTimestamp = Date.now();
         window.requestAnimationFrame(() => this.Update());
+    }
+
+    public get Entities(): Entity[] {
+        return this._entities;
     }
 }

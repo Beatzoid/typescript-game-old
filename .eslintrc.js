@@ -44,7 +44,7 @@ module.exports = {
             },
             {
                 selector: "variable",
-                format: ["camelCase"],
+                format: ["camelCase", "UPPER_CASE"],
             },
             {
                 selector: "memberLike",
@@ -52,7 +52,14 @@ module.exports = {
                 format: ["camelCase"],
                 leadingUnderscore: "require",
             },
+            {
+                selector: "variable",
+                types: ["boolean"],
+                format: ["PascalCase"],
+                prefix: ["is", "should", "has", "can", "did", "will"],
+            },
         ],
+        "@typescript-eslint/no-non-null-assertion": "off",
     },
     overrides: [
         {
