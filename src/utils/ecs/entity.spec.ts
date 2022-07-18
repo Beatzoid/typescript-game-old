@@ -6,25 +6,37 @@ class E extends Entity {}
 class C1 implements IComponent {
     public Entity: E;
 
-    public Awake(): void {}
+    public Awake(): void {
+        /*...*/
+    }
 
-    Update(deltaTime: number): void {}
+    Update(deltaTime: number): void {
+        /*...*/
+    }
 }
 
 class C2 implements IComponent {
     public Entity: E;
 
-    public Awake(): void {}
+    public Awake(): void {
+        /*...*/
+    }
 
-    Update(deltaTime: number): void {}
+    Update(deltaTime: number): void {
+        /*...*/
+    }
 }
 
 class C3 implements IComponent {
     public Entity: E;
 
-    public Awake(): void {}
+    public Awake(): void {
+        /*...*/
+    }
 
-    Update(deltaTime: number): void {}
+    Update(deltaTime: number): void {
+        /*...*/
+    }
 }
 
 describe(">>> Entity", () => {
