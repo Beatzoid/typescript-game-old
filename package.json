@@ -23,7 +23,7 @@
         "@typescript-eslint/eslint-plugin": "^5.41.0",
         "@typescript-eslint/parser": "^5.41.0",
         "babel-loader": "^9.0.0",
-        "canvas": "^2.10.1",
+        "canvas": "^2.10.2",
         "clean-webpack-plugin": "^4.0.0",
         "eslint": "^8.26.0",
         "html-webpack-plugin": "^5.5.0",
